@@ -26,13 +26,10 @@ header{
     padding: 20px;
     text-align: center;
     margin: 0 20%;
-    color: #aad576;
-    background: #143601;
+    color: #80ed99;
+    background: none;
     border-radius: 10px;
     width: 50%;
+    border: 2px solid;
 }
 
-#red{
-	color: #9d0208;
-    background: #fb5659;
-}

@@ -9,7 +9,6 @@ const Geocoder=mbxGeocoding({accessToken:process.env.MAPBOX_TOKEN});
 module.exports.stadiumHome=wrapAsync(async (req,res)=>{
 	const data=await Soccer.find({});
 	const geoData=await JSON.stringify(data.map(x=>x.property));
-	// console.log(geoData)
 	res.render("home.ejs",{data,geoData});
 });
 
@@ -35,7 +34,6 @@ module.exports.stadiumNew_post=wrapAsync(async (req,res)=>{
 		query:`${req.body.City},${req.body.Country}`,
 		limit:1
 	}).send()
-	console.log(data.body)
 	const {coordinates}=data.body.features[0].geometry;
 	const newStadium=await new Soccer({...req.body,Owner:req.user._id,Latitude:coordinates[0],Longitude:coordinates[1]});
 	newStadium.geometry=data.body.features[0].geometry;

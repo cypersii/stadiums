@@ -104,7 +104,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY3kwMHIiLCJhIjoiY2t6aHhlemRtMDI3bjJwcGY4NWxqb
         // the location of the feature, with
         // description HTML from its properties.
         map.on('click', 'unclustered-point', (e) => {
-            // console.log(e.features[0])
             const coordinates = e.features[0].geometry.coordinates.slice();
             const popupName= e.features[0].properties.popupName;
             // const tsunami = e.features[0].properties.tsunami === 1 ? 'yes' : 'no';

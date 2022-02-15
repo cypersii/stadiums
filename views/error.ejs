@@ -1,6 +1,10 @@
 <%- layout("./boilerplate/boilerplate.ejs") %>
 	<link rel="stylesheet" type="text/css" href="/style/error.css">
 	<div class="error">
-		<h1> <%=error.name%> <h1>
-		<h2> <%=error.message%> <%=error.msg%></h2>
+		<%if(process.env.NODE_ENV!=='production'){%>
+			<h1> <%=error.name%> <h1>
+			<h2> <%=error.message%> <%=error.msg%></h2>
+		<%}else{%>
+			<h1> <%=error.name%> </h1>
+		<%}%>
 	</div>
