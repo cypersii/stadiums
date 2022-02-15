@@ -1,0 +1,20 @@
+<%-layout("/boilerplate/boilerplate.ejs") %>
+	<link rel="stylesheet" type="text/css" href="/style/home.css">
+
+	<script> const stadiums={features:<%-geoData%>}</script>
+
+	<link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+
+	<div id="map"></div>
+	
+	<div class="container">
+		<h1>STADIUMS</h1>
+		<%for(let num of data){%>
+			<ul class="container-main">
+				<a href="/stadiums/<%=num._id%>"> <li> <%=num.Stadium%> </li> </a>
+			</ul>
+		<%}%>
+	</div>
+
+<script src='/Js/clustermap.js'></script>

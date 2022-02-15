@@ -1,0 +1,140 @@
+img{
+ 	height: 400px;
+ 	width: 500px;
+}
+
+header{
+	height: 60px;
+    padding: 20px;
+    text-align: center;
+    margin: 0 20%;
+    background: #143601;
+    color: #aad576;
+    border-radius: 10px;
+}
+
+
+.container-main-view{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.review-main{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+textarea{
+	font-size: 18px;
+	display: block;
+	margin: 20px 0;
+}
+
+form{
+	display: inline-block;
+}
+
+.review-data-container{
+	margin-top: 10px;
+	height: 650px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.review-data-container >div{
+	width: 190px;
+	padding: 10px;
+	border: 2px solid;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+h3{
+	margin-bottom: 10px;
+}
+
+.container-review{
+	width: 400px;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#rating{
+	height: 40px;
+}
+
+.data{
+	width: 500px;
+	margin: 0;
+	border: 2px solid;
+	border-top: 0;
+	padding: 10px 0;
+}
+
+#middle{
+	padding: 10px 0;
+    border: 2px solid;
+    border-top: 0;
+}
+
+button{
+	width: 80px;
+	margin-right: 10px;
+	border-radius: 10px;
+	height: 40px;
+	padding: 5px;
+	border: 0;
+	background: #c1121f;
+	color: #f5ebe0;
+	font-size: 15px;
+}
+
+button:hover{
+	background: #830a13;
+}
+
+#h2{
+	margin: 0;
+	padding-top: 10px;
+	border: 2px solid;
+	border-top: 0;
+}
+
+#capacity{
+	padding: 10px 0;
+    border: 2px solid;
+    border-top: 0;
+}
+
+.button-container{
+	padding: 15px 0;
+    border: 2px solid;
+    border-top: 0;
+}
+
+#edit{
+	background: #00afb9;
+}
+
+#edit:hover{
+	background: #06747a;
+}
+
+#submit{
+	background: #2b9348;
+}
+
+#submit:hover{
+	background: #1b7234;;
+}
+
+#map-container{
+	/*border: 2px solid;*/
+}
+
+#map{
+	border-radius: 10px;
+}

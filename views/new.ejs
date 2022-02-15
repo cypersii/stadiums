@@ -1,0 +1,29 @@
+<%- layout("./boilerplate/boilerplate.ejs") %>
+
+	<div class="container-main">
+		<form action="/stadiums/new" method="post">
+			<h1>New Stadium</h1>
+			<div>
+				<label for="t">Team</label>
+				<input type="text" placeholder="input" name="Team" id="t" minlength="5" required autofocus>
+			</div>
+			<div>
+				<label for="c">City</label>
+				<input type="text" placeholder="input" name="City" id="c" minlength="5" required>
+			</div>
+			<div>
+				<label for="s">Stadium</label>
+				<input type="text" placeholder="input" name="Stadium" id="s" minlength="5" required>
+			</div>
+			<div>
+				<label for="cap">Capacity</label>
+				<input type="text" placeholder="input" name="Capacity" id="cap" minlength="5" required>
+			</div>
+			<div>
+				<label for="country">Country</label>
+				<input type="text" placeholder="input" name="Country" id="country" minlength="5" required>
+			</div>
+
+			<button>Create</button>
+		</form>
+	</div>

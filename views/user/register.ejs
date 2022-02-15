@@ -1,0 +1,22 @@
+<%- layout("/boilerplate/boilerplate.ejs") %>
+	<%if(error.length){%>
+		<header> <%=error%> </header>
+	<%}%>
+	<div class="container-main">
+		<h1>Register</h1>
+		<form action="/stadiums/register" method="post">
+			<div>
+				<label for="user">Username</label>
+				<input type="text" id="user" name="username" required autofocus>
+			</div>
+			<div>
+				<label for="pass">Password</label>
+				<input type="password" id="pass" name="password" required>
+			</div>
+			<div>
+				<label for="email">E-mail</label>
+				<input type="email" id="email" name="email" required>
+			</div>
+			<button>Register</button>
+		</form>
+	</div>

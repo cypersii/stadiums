@@ -1,0 +1,27 @@
+<%- layout("./boilerplate/boilerplate.ejs") %>
+	<div class="container-main">
+		<form action="/stadiums/<%=data._id%>/edit?_method=PUT" method="post">
+			<h1>Update Stadium</h1>
+			<div>
+				<label for="t">Team</label>
+				<input type="text" placeholder="input" name="Team" value="<%=data.Team%>" id="t" autofocus>
+			</div>
+			<div>
+				<label for="c">City</label>
+				<input type="text" placeholder="input" name="City" value="<%=data.City%>" for="c">
+			</div>
+			<div>
+				<label for="s">Stadium</label>
+				<input type="text" placeholder="input" name="Stadium" value="<%=data.Stadium%>" id="s">
+			</div>
+			<div>
+				<label for="cap">Capacity</label>
+				<input type="text" placeholder="input" name="Capacity" value="<%=data.Capacity%>" id="cap">
+			</div>
+			<div>
+				<label for="Country">Country</label>
+				<input type="text" placeholder="input" name="Country" value="<%=data.Country%>" id="country">
+			</div>
+			<button>Update</button>
+		</form>
+	</div>

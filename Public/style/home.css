@@ -1,0 +1,78 @@
+html{
+	height: max-content;
+}
+
+.container{
+	display: flex;
+	flex-direction: column;
+	margin: 0 100px;
+	margin-top: 400px;
+}
+
+.container > ul{
+	border: 1px solid #adb5bd;
+	margin: 0 0 10px 0;
+	padding: 10px;
+	background: #c9c9c9;
+	border-radius: 5px;
+	box-shadow: 20px 20px 20px #adb5bd;
+	width: 80%;
+	font-size: 20px;
+	height: 50px;
+}
+
+.container >ul:hover{
+	background: #e5e5e5;
+}
+
+.container-main >a{
+	text-decoration: none;
+	color: #14213d;
+}
+
+
+h1{
+	color: #f5ebe0;
+}
+
+/*header{
+	height: 60px;
+    padding: 20px;
+    text-align: center;
+    margin: 0 20%;
+    color: #aad576;
+    background: #143601;
+    border-radius: 10px;
+    width: 50%;
+}
+
+#red{
+	color: #9d0208;
+    background: #fb5659;
+}*/
+
+
+#map { 
+	position: absolute;
+    top: 80px;
+    bottom: 80px;
+    width: 71%;
+    right: 100px;
+    left: 100px;
+    height: 400px;
+    border-radius: 10px;
+ }
+
+.mapboxgl-popup-content{
+	color: black;
+}
+
+
+.mapboxgl-popup-close-button{
+	color: black;
+	width: 0px;
+}
+
+:any-link{
+	color: #000;
+}

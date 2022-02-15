@@ -1,0 +1,13 @@
+<%- layout("/boilerplate/boilerplate.ejs") %>
+	<link rel="stylesheet" type="text/css" href="/style/main.css">
+
+	<%if(msg.length){%>
+		<header id="green"> <%=msg[0]%></header>
+		<%}else if(error.length){%>
+			<header id="red"> <%=error[0]%></header>
+		<%}%>
+
+	<section>	
+		<h2>Stadiums</h2>
+		<p>Welcome to stadium's world <br> Feel free to create your own stadium</p>
+	</section>

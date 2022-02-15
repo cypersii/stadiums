@@ -1,0 +1,98 @@
+<%- layout("./boilerplate/boilerplate.ejs") %>
+	<link rel="stylesheet" type="text/css" href="/style/view.css">
+	<link rel="stylesheet" type="text/css" href="/style/star.css">
+
+	<script>
+		const value=[<%=data.geometry.coordinates%>];
+	</script>
+
+	<script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+
+	<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
+	<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
+
+	<%if(msg.length){%>
+		<header> <%=msg[0]%> </header>
+	<%}%>
+	
+	<div class="container-main-view">
+		<div class="container-view">
+			<h1> <%=data.Team%> </h1>
+			<img src="<%=url.regular%>">
+			<h2 id="h2"> <%=data.Stadium%> , <%=data.Country%> </h2>
+			<p class="data">Football is a family of team sports that involve, to varying degrees, kicking a ball to score a goal. Unqualified, the word football normally means the form of football that is the most popular where the word is used. Sports commonly called football include association football (known as soccer in North America and Oceania);</p>
+			<div id="capacity"> <%=data.Capacity%>/Capacity </div>
+			<section id="middle"> Submited by: <%=data.Owner.username%> </section>
+
+			<section class="button-container">
+				<%if(currentUser && (currentUser.id===data.Owner.id)){%>
+					<form action="/stadiums/<%=data._id%>/edit">
+						<button id="edit">Edit</button>
+					</form>
+
+					<form action="/stadiums/<%=data._id%>?_method=DELETE" method="post">
+						<button class="red">Delete</button>
+					</form>
+				<%}%>
+			</section>
+
+	
+		</div>
+
+		<div class="review-main">
+			<h2>REVIEW'S</h2>
+
+			<section class="container-review" >
+				<%if(currentUser){%>
+					<form action="/stadiums/<%=data._id%>/review" method="post">
+						<div id="rating">
+							<fieldset class="starability-growRotate">
+							  <legend></legend>
+							  <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
+							  <input type="radio" id="first-rate1" name="rating" value="1" />
+							  <label for="first-rate1" title="Terrible">1 star</label>
+							  <input type="radio" id="first-rate2" name="rating" value="2" />
+							  <label for="first-rate2" title="Not good">2 stars</label>
+							  <input type="radio" id="first-rate3" name="rating" value="3" />
+							  <label for="first-rate3" title="Average">3 stars</label>
+							  <input type="radio" id="first-rate4" name="rating" value="4" />
+							  <label for="first-rate4" title="Very good">4 stars</label>
+							  <input type="radio" id="first-rate5" name="rating" value="5" />
+							  <label for="first-rate5" title="Amazing">5 stars</label>
+							</fieldset>
+							
+						</div>
+			<textarea id="t" rows="5" cols="30" name="review" placeholder="REVIEW" maxlength="20" autofocus></textarea>	
+						<button id="submit">Submit</button>
+					</form>
+				<%}%>
+			</section>
+
+			<section class="review-data-container">
+				<%if(data.Review && currentUser){%>
+					<%for(let x of data.Review){%>
+						<div>
+							<h3><%=x.user.username%></h3>
+							<section class="starability-result" data-rating='<%=x.rating%>'></section>
+							<p>Review:<%=x.review%> </p>
+						<%if(currentUser.id===x.user.id){%>
+							<form action="/stadiums/<%=data._id%>/review/<%=x._id%>/delete?_method=DELETE" method="post">
+									<button class="red">Delete</button>
+							</form>
+							<%}%>
+						</div>
+					<%}%>
+				<%}%>
+			</section>
+		</div>
+
+		<div id="map-container">
+			<h2>Location</h2>
+			<div id='map' style='width: 400px; height: 200px;'></div>
+		</div>
+	</div>
+
+
+	
+<script src="/Js/map.js"></script>
