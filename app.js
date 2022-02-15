@@ -103,12 +103,12 @@ app.get('*',async(req,res,next)=>{
 
 app.use((err,req,res,next)=>{
 	const {status=400,msg='new error'}=err
-	// res.status(status).send(msg)
 	res.render('error',{error:err})
-	// next(err)
 })
 
-app.listen('3000',()=>{
-	console.log('SERVER IS LISTINING ON PORT :3000')
+const port=process.env.PORT || '3000';
+
+app.listen(port,()=>{
+	console.log(`SERVER IS LISTINING ON PORT :${port}`)
 })
 
